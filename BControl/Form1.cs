@@ -7,6 +7,7 @@ Documentation:
     - https://docs.microsoft.com/en-us/windows/desktop/wmicoreprov/wmimonitorbrightnessmethods
     - https://docs.microsoft.com/en-us/windows/desktop/wmicoreprov/wmisetbrightness-method-in-class-wmimonitorbrightnessmethods
     - https://docs.microsoft.com/en-us/windows/desktop/wmicoreprov/wmimonitorbasicdisplayparams
+    - https://docs.microsoft.com/en-us/windows/desktop/cimwin32prov/win32-videocontroller
 */
 
 using System;
@@ -129,7 +130,7 @@ namespace BControl
 
         private void GetVideoCardInfo_Click(object sender, EventArgs e)
         {
-            ManagementObjectSearcher ManObjS = new ManagementObjectSearcher("select * from Win32_VideoController");
+            ManagementObjectSearcher ManObjS = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
             foreach (ManagementObject ManObject in ManObjS.Get())
             {
                 MessageBox.Show(ManObject["Name"] + "\n" + "Driver Version: " + 
