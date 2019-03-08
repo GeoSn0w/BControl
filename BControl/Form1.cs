@@ -54,7 +54,7 @@ namespace BControl
                 BrightnessController.Maximum = ValidBrightnessLevels.Count() - 1;
                 BrightnessController.Update();
                 BrightnessController.Refresh();
-                Percentage.Text = BrightnessController.Value + " %";
+                Percentage.Text = BrightnessController.Value + "%";
             }
         }
 
