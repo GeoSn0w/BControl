@@ -44,7 +44,7 @@ namespace BControl
             ValidBrightnessLevels = QueryAvailableBrightnessLevels();
             if (ValidBrightnessLevels.Count() == 0) 
             {
-                MessageBox.Show("This computer does not appear to support this feature. Make sure the driver is installed and the video card supports brightness controlling.", "BControl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This computer does not appear to support brightness control. Make sure the driver is installed and the video card supports brightness controlling.", "BControl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 BrightnessController.Enabled = false;
             }
             else
