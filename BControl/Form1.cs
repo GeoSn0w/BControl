@@ -31,6 +31,7 @@ namespace BControl
         public VisualForm()
         {
             InitializeComponent();
+            setAside();
         }
 
         private void VisualForm_Load(object sender, EventArgs e)
@@ -100,7 +101,7 @@ namespace BControl
             }
             catch (Exception VideoException)
             {
-                MessageBox.Show("Unable to get available brightness levels. The video card may not support this feature or the driver is not installed. Error: " + VideoException.Message, "BControl", MessageBoxButtons.OK, MessageBoxIcon.Error););
+                MessageBox.Show("Unable to get available brightness levels. The video card may not support this feature or the driver is not installed. Error: " + VideoException.Message, "BControl", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return BrightnessLevels;
@@ -144,6 +145,23 @@ namespace BControl
         private void CloseAppX_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void setAside()
+        {
+            // Position the form on the bottom-right corner instead of the center screen like the initial version was.
+            Screen thisScreenBecauseNotAnother = Screen.AllScreens[0];
+
+            foreach (Screen currentScreen in Screen.AllScreens)
+            {
+                if (currentScreen.WorkingArea.Right > thisScreenBecauseNotAnother.WorkingArea.Right)
+                {
+                    thisScreenBecauseNotAnother = currentScreen;
+                }   
+            }
+
+            Left = thisScreenBecauseNotAnother.WorkingArea.Right - Width;
+            Top = thisScreenBecauseNotAnother.WorkingArea.Bottom - Height;
         }
     }
 }

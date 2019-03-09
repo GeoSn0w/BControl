@@ -138,7 +138,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisualForm";
             this.Opacity = 0.95D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BControl";
             this.Load += new System.EventHandler(this.VisualForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessController)).EndInit();
