@@ -138,6 +138,7 @@ namespace BControl
                                 ManObject["VideoProcessor"] + "\n\n" + "Installed Display Drivers: " +
                                 ManObject["InstalledDisplayDrivers"], "BControl - Video Card Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            ManObjS.Dispose();
         }
 
         private void CloseAppX_Click(object sender, EventArgs e)
